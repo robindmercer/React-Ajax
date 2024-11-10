@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=UTF-8>
+  <title>Demo AJAX</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div id='respuesta'>
+  </div>
+  <button class='boton'>AJAX!</button>
+  <button id='btn'>AJAX POST</button>
+  <script type="text/javascript">
+    var index = 10;
+    $('.boton').click(function () {
+      //   // GET AJAX
+      //   // $.get("https://jsonplaceholder.typicode.com/photos/" + index, function (data) {
+      //   //   // vanilla javascript
+      //   //   var img = document.createElement('img');
+      //   //   img.src = data.url;
+      //   //   var title = document.createElement('h3');
+      //   //   title.textContent = data.title;
+      //   //   $('#respuesta').append(img);
+      //   //   $('#respuesta').append(title);
+      //   //   index++;
+      //   // });
+      fetch(`https://jsonplaceholder.typicode.com/photos/${index}`)
+        .then(res => res.json())
+        .then(data => {
+          var img = document.createElement('img');
+          img.src = data.url;
+          var title = document.createElement('h3');
+          title.textContent = data.title;
+          $('#respuesta').append(title);
+          $('#respuesta').append(img);
+          index++;
+        })
+    });
+    // post
+    $('#btn').click(function () {
+      $.post(`https://jsonplaceholder.typicode.com/posts`, {
+        title: 'Henry',
+        body: 'Post',
+        userId: 7
+      }, function (data) {
+        var title = document.createElement('h3');
+        title.textContent = data.title + ' ' + data.id;
+        $('#respuesta').append(title);
+      })
+    })
+    /*
+      fetch(`https://jsonplaceholder.typicode.com/posts`, {
+        method: 'POST',
+        body: JSON.sytingify({
+            title: 'Henry',
+            body: 'Post',
+            userId: 7
+          })
+        })
+        .then(res => res.json())
+        .then(data => {
+           console.log(data); ojo solo devuelve ID. 
+        })
+    */
+    function Delete() {
+      $.ajax({
+        url: 'loque sea',
+        typr: 'DELETE',
+        data: "nombre=john",
+        success: function (data) {
+          alert('Load ok ');
+        }
+      })
+    };
+  </script>
+</body>
+
+</html>

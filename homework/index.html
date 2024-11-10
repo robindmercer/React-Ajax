@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <title>HomeWork Ajax</title>
+</head>
+
+<body>
+  <button id='boton'>Ver Amigos</button>
+  <ul id='lista'>
+  </ul>
+
+  <h2>Ver Amigos</h2>
+  <img id="wait" style="display:none" src='https://upload.wikimedia.org/wikipedia/commons/c/c7/Loading_2.gif' />
+  <hr>
+  <input id='input' placeholder="Ingrese el Id"></input>
+  <button id='search'>Buscar</button>
+  <span id='amigo'></span>
+
+  <!--hr>
+  <input id='inputNombre' placeholder="Ingrese el Nombre"></input>
+  <button id='searchName'>Buscar</button>
+  <span id='amigoName'></span-->
+
+  <hr>
+  <input id='inputDelete' placeholder="Ingrese el Id"></input>
+  <button id='delete'>Delete</button>
+  <span id='sucess'></span>
+
+  <hr>
+  <table>
+    <tr>
+      <td>Nombre:</td>
+      <td>
+      <input id='newName' placeholder="Amigo Nuevo"></input>
+      </td>
+    </tr>
+    <tr>
+      <td>Edad:</td>
+      <td><input id='newAge' placeholder="Edad Nuevo"></input></td>
+    </tr>
+    <tr>
+      <td>Mail:</td>
+      <td>
+        <input id='newMail' placeholder="Mail Nuevo"></input>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"><button id='newinput'>Alta</button></td>
+    </tr>
+  </table>
+  
+
+
+  <script src="index.js"></script>
+</body>
+
+</html>
